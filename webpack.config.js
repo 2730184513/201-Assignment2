@@ -59,8 +59,8 @@ module.exports = {
         hot: true,
         historyApiFallback: true,
         open: true,
-        port: process.env.PORT || 3001,
-        host: process.env.HOST || 'localhost'
+        port: 3002,
+        host: 'localhost'
     },
     performance: {
         hints: false
