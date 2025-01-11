@@ -5,31 +5,12 @@
             "src": "package.json",
             "use": "@vercel/static-build",
             "config": {
-                "distDir": "dist",
                 "buildCommand": "npm run vercel-build"
             }
         }
     ],
     "routes": [
-        {
-            "src": "/data/(.*)",
-            "dest": "/data/$1"
-        },
-        {
-            "src": "/static/(.*)",
-            "dest": "/static/$1"
-        },
-        {
-            "src": "/images/(.*)",
-            "dest": "/images/$1"
-        },
-        {
-            "src": "/audio/(.*)",
-            "dest": "/audio/$1"
-        },
-        {
-            "src": "/(.*)",
-            "dest": "/index.html"
-        }
+        { "src": "/data/(.*)", "dest": "/data/$1" },
+        { "src": "/(.*)", "dest": "/index.html" }
     ]
-} 
+}

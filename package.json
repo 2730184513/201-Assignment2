@@ -8,7 +8,7 @@
     "build": "webpack --mode production && cp public/index.html dist/",
     "serve": "node server.js",
     "dev": "webpack serve --mode development",
-    "vercel-build": "webpack --mode production && cp public/index.html dist/"
+    "vercel-build": "webpack --mode production"
   },
   "dependencies": {
     "express": "^4.18.2",
