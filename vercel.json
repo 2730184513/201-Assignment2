@@ -5,7 +5,7 @@
             "src": "package.json",
             "use": "@vercel/static-build",
             "config": {
-                "buildCommand": "npm run dev",
+                "buildCommand": "npx webpack --mode production",
                 "distDir": "dist"
             }
         }
