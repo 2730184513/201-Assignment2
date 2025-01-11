@@ -4,11 +4,10 @@
   "description": "Penang Tourism Website",
   "main": "index.js",
   "scripts": {
-    "start": "npx webpack serve --mode development --port 3002",
-    "build": "npx webpack --mode production",
-    "vercel-build": "npx webpack --mode production",
+    "start": "webpack serve --mode development --port 3002",
+    "build": "webpack --mode production && cp index.html dist/",
     "serve": "node server.js",
-    "dev": "npx webpack serve --mode development --port 3002"
+    "dev": "webpack serve --mode development --port 3002"
   },
   "dependencies": {
     "express": "^4.18.2",

@@ -1,10 +1,13 @@
 {
     "version": 2,
-    "framework": null,
-    "buildCommand": "npm run vercel-build",
-    "devCommand": "npm run dev",
-    "outputDirectory": "dist",
+    "builds": [
+        {
+            "src": "package.json",
+            "use": "@vercel/static"
+        }
+    ],
     "routes": [
+        { "handle": "filesystem" },
         { "src": "/assets/(.*)", "dest": "/assets/$1" },
         { "src": "/data/(.*)", "dest": "/data/$1" },
         { "src": "/bundle.js", "dest": "/bundle.js" },
