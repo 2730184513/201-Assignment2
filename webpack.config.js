@@ -26,14 +26,14 @@ module.exports = {
                 test: /\.(png|jpg|jpeg|gif|svg)$/,
                 type: 'asset/resource',
                 generator: {
-                    filename: 'images/[name][ext]'
+                    filename: 'assets/images/[name][ext]'
                 }
             },
             {
                 test: /\.(mp3|wav|ogg)$/,
                 type: 'asset/resource',
                 generator: {
-                    filename: 'audio/[name][ext]'
+                    filename: 'assets/audio/[name][ext]'
                 }
             }
         ]
@@ -45,13 +45,6 @@ module.exports = {
         new CopyWebpackPlugin({
             patterns: [
                 {
-                    from: 'public',
-                    to: '',
-                    globOptions: {
-                        ignore: ['**/index.html']
-                    }
-                },
-                {
                     from: 'src/data',
                     to: 'data'
                 }
@@ -59,21 +52,15 @@ module.exports = {
         })
     ],
     devServer: {
-        static: [
-            {
-                directory: path.join(__dirname, 'public'),
-                publicPath: '/'
-            },
-            {
-                directory: path.join(__dirname, 'src/data'),
-                publicPath: '/data'
-            }
-        ],
+        static: {
+            directory: path.join(__dirname),
+            publicPath: '/'
+        },
         hot: true,
         historyApiFallback: true,
         open: true,
-        port: 3001,
-        host: 'localhost'
+        port: process.env.PORT || 3001,
+        host: process.env.HOST || 'localhost'
     },
     performance: {
         hints: false
