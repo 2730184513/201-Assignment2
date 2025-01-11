@@ -1,6 +1,6 @@
 import React from 'react';
 import { BaseModal } from './BaseCard';
-import '../styles/BaseList.css';
+import './BaseList.css';
 
 export class BaseList extends React.Component {
     constructor(props) {

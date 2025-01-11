@@ -2,12 +2,12 @@ const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-    entry: './src/index.js',
+    entry: './index.js',
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname),
         filename: 'bundle.js',
         publicPath: '/',
-        clean: true
+        clean: false
     },
     module: {
         rules: [
@@ -26,14 +26,14 @@ module.exports = {
                 test: /\.(png|jpg|jpeg|gif|svg)$/,
                 type: 'asset/resource',
                 generator: {
-                    filename: 'assets/images/[name][ext]'
+                    filename: '[name][ext]'
                 }
             },
             {
                 test: /\.(mp3|wav|ogg)$/,
                 type: 'asset/resource',
                 generator: {
-                    filename: 'assets/audio/[name][ext]'
+                    filename: '[name][ext]'
                 }
             }
         ]
@@ -45,19 +45,18 @@ module.exports = {
         new CopyWebpackPlugin({
             patterns: [
                 {
-                    from: 'public',
-                    to: ''
-                },
-                {
-                    from: 'src/data',
-                    to: 'data'
+                    from: 'data',
+                    to: 'data',
+                    globOptions: {
+                        ignore: ['**/.DS_Store']
+                    }
                 }
             ]
         })
     ],
     devServer: {
         static: {
-            directory: path.join(__dirname, 'public'),
+            directory: path.join(__dirname),
             publicPath: '/'
         },
         hot: true,

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/BaseCard.css';
+import './BaseCard.css';
 
 const BaseCard = ({ 
     id,
