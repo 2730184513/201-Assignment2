@@ -1,0 +1,7 @@
+id,name,description,category,location,price_range,rating
+1,Char Kway Teow,Famous stir-fried rice noodles with prawns and Chinese sausage,street_food,Gurney Drive,$$,4.8
+2,Penang Laksa,Spicy and sour fish-based noodle soup,street_food,Air Itam Market,$,4.7
+3,Nasi Kandar,Rice served with various curry dishes,local,Line Clear Nasi Kandar,$$,4.6
+4,Rojak,Fruit and vegetable salad with spicy shrimp paste sauce,street_food,Gurney Plaza,$,4.4
+5,Hokkien Mee,Prawn noodle soup with pork and spices,chinese,Lebuh Presgrave,$$,4.5
+6,Satay,Grilled meat skewers with peanut sauce,malay,Gurney Drive,$,4.3

@@ -1,0 +1,36 @@
+.music-control {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.music-control:hover {
+    transform: scale(1.1);
+    background-color: #fff;
+}
+
+.music-control.muted {
+    opacity: 0.7;
+}
+
+.music-control.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.music-control i {
+    font-size: 18px;
+    color: #333;
+} 

@@ -1,0 +1,56 @@
+.attractions-container {
+    padding: 2rem;
+}
+
+.attractions-filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.filter-button {
+    padding: 0.5rem 1.5rem;
+    border: 2px solid #2c5282;
+    border-radius: 25px;
+    background: transparent;
+    color: #2c5282;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.filter-button:hover,
+.filter-button.active {
+    background: #2c5282;
+    color: white;
+}
+
+.attractions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .attractions-container {
+        padding: 1rem;
+    }
+
+    .attractions-filters {
+        gap: 0.5rem;
+    }
+
+    .filter-button {
+        padding: 0.4rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .attractions-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+} 
