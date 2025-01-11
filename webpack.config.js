@@ -1,4 +1,5 @@
 const path = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: './src/index.js',
@@ -40,6 +41,23 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.jsx']
     },
+    plugins: [
+        new CopyWebpackPlugin({
+            patterns: [
+                {
+                    from: 'public',
+                    to: '',
+                    globOptions: {
+                        ignore: ['**/index.html']
+                    }
+                },
+                {
+                    from: 'src/data',
+                    to: 'data'
+                }
+            ]
+        })
+    ],
     devServer: {
         static: [
             {
