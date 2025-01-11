@@ -1,7 +1,15 @@
 {
     "version": 2,
-    "buildCommand": "npm run vercel-build",
-    "outputDirectory": ".",
+    "builds": [
+        {
+            "src": "package.json",
+            "use": "@vercel/node-builder",
+            "config": {
+                "buildCommand": "npm install -g webpack webpack-cli && npm run vercel-build",
+                "outputDirectory": "."
+            }
+        }
+    ],
     "routes": [
         { "src": "/assets/(.*)", "dest": "/$1" },
         { "src": "/data/(.*)", "dest": "/data/$1" },
